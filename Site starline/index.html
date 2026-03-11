@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starline - Telefonia Descomplicada para Empresas Exigentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            animation: pulse-green 2s infinite;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4); }
+            50% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.7); }
+        }
+        
+        .gradient-orange {
+            background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+        }
+        
+        .gradient-blue {
+            background: linear-gradient(135deg, #1976D2 0%, #42A5F5 100%);
+        }
+        
+        .card-3d {
+            transition: all 0.3s ease;
+            border-radius: 16px;
+        }
+        
+        .card-3d:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+        
+        .section-dark {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center">
+                    <img src="https://qtrypzzcjebvfcihiynt.supabase.co/storage/v1/object/public/base44-prod/public/6984e3b7d3d6c30ba5ea41a9/e195d4cbb_Logo_azul_diferente-removebg-preview.png" 
+                         alt="Starline" class="h-10 w-auto">
+                </a>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#solucoes" class="text-sm font-medium text-gray-700 hover:text-[#1976D2] transition">Soluções</a>
+                    <a href="#telefonia" class="text-sm font-medium text-gray-700 hover:text-[#1976D2] transition">Telefonia</a>
+                    <a href="#internet" class="text-sm font-medium text-gray-700 hover:text-[#1976D2] transition">Internet</a>
+                    <a href="#whatsapp" class="text-sm font-medium text-gray-700 hover:text-[#1976D2] transition">WhatsApp Business</a>
+                    <a href="#sobre" class="text-sm font-medium text-gray-700 hover:text-[#1976D2] transition">Sobre</a>
+                </nav>
+                
+                <!-- Right side -->
+                <div class="flex items-center gap-4">
+                    <a href="tel:5123190300" class="hidden lg:flex items-center gap-2 text-sm text-gray-700">
+                        <i class="fas fa-phone text-[#1976D2]"></i>
+                        (51) 2319-0300
+                    </a>
+                    <a href="https://wa.me/555123190300?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank">
+                        <button class="gradient-orange text-white font-semibold px-6 py-2.5 rounded-full shadow-lg hover:shadow-xl transition">
+                            Falar Conosco
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-4 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
+                        Telefonia <span class="text-[#1976D2]">Descomplicada</span><br>
+                        para Empresas<br>
+                        Exigentes
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Soluções completas em telecomunicações: PABX na Nuvem, 
+                        Internet Corporativa, API WhatsApp Business e muito mais. Sua 
+                        empresa pronta para o amanhã!
+                    </p>
+                    <button class="gradient-orange text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition">
+                        Fale com Nosso Time
+                    </button>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-8 mt-12">
+                        <div>
+                            <div class="stats-number text-[#1976D2]">99,9%</div>
+                            <div class="text-sm text-gray-600">Uptime</div>
+                        </div>
+                        <div>
+                            <div class="stats-number text-[#FF6B35]">24/7</div>
+                            <div class="text-sm text-gray-600">Suporte</div>
+                        </div>
+                        <div>
+                            <div class="stats-number text-[#1976D2]">+100</div>
+                            <div class="text-sm text-gray-600">Clientes</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Cards -->
+                <div class="space-y-6 fade-in">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 card-3d flex items-center gap-4">
+                        <div class="w-32 h-32 rounded-xl overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=400&fit=crop" 
+                                 alt="Conectando empresas" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900 mb-1">Conectando empresas</h3>
+                            <p class="text-sm text-gray-600">Soluções que funcionam</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 card-3d">
+                        <div class="flex items-start gap-3 mb-3">
+                            <i class="fas fa-phone-alt text-2xl text-[#1976D2]"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-1">Telefone Fixo na Nuvem</h3>
+                                <p class="text-sm text-gray-600">PABX empresarial com ligações ilimitadas para todo Brasil. Reduza até 70% dos custos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 card-3d">
+                        <div class="flex items-start gap-3 mb-3">
+                            <i class="fas fa-wifi text-2xl text-[#FF6B35]"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-1">Internet Corporativa</h3>
+                                <p class="text-sm text-gray-600">Links de alta performance com SLA de 99% e IP fixo. De 10 Mb até 1 GB de velocidade.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-2xl shadow-xl p-6 card-3d">
+                        <div class="flex items-start gap-3">
+                            <i class="fab fa-whatsapp text-2xl text-[#25D366]"></i>
+                            <div>
+                                <h3 class="font-bold text-gray-900 mb-1">API WhatsApp Business</h3>
+                                <p class="text-sm text-gray-600">Integração oficial com chatbots, automação e atendimento 24/7 para seu cliente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quem Somos -->
+   <section id="sobre" class="py-24 px-4 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            
+            <div class="fade-in space-y-8">
+                <div>
+                    <span class="bg-blue-100 text-[#1976D2] text-[10px] font-bold px-3 py-1 rounded-full tracking-widest uppercase mb-4 inline-block">
+                        QUEM SOMOS
+                    </span>
+                    <h2 class="text-5xl font-extrabold text-gray-900 leading-tight">
+                        Quem <span class="text-[#FF6B35]">somos?</span>
+                    </h2>
+                </div>
+                
+                <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+                    <p>
+                        A Starline nasceu com um propósito claro: <strong class="text-gray-900">simplificar a comunicação empresarial</strong>. Oferecemos tecnologia de ponta com a confiabilidade que seu negócio precisa para crescer.
+                    </p>
+                    <p>
+                        Nossa equipe trabalha todos os dias para entregar <strong class="text-gray-900">soluções inteligentes e eficientes</strong>, pensando em cada detalhe que faz diferença no dia a dia da sua empresa.
+                    </p>
+                    <p>
+                        Sabemos que cada negócio é único. Por isso, oferecemos suporte dedicado e personalizado, acompanhando você em cada etapa da jornada.
+                    </p>
+                </div>
+
+                <button class="gradient-orange text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-1">
+                    Conectando seu negócio ao futuro.
+                </button>
+            </div>
+            
+            <div class="fade-in relative">
+                <div class="relative rounded-[2rem] overflow-hidden shadow-2xl mb-8 group">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=500&fit=crop" 
+                         alt="Nossa Equipe" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 to-transparent text-white">
+                        <h3 class="font-bold text-2xl">Nossa Equipe</h3>
+                        <p class="text-gray-300 text-sm">Dedicada ao seu sucesso</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-50 hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-[#1976D2]">
+                            <i class="fas fa-bullseye text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Excelência</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Busca constante pela qualidade máxima em cada solução entregue.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-50 hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-yellow-50 rounded-xl flex items-center justify-center mb-4 text-yellow-500">
+                            <i class="far fa-lightbulb text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Inovação</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Tecnologia de ponta para antecipar e superar expectativas.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-50 hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-4 text-green-500">
+                            <i class="fas fa-users text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Pessoas</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">Clientes são a parte mais importante do nosso negócio.</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-md border border-gray-50 hover:shadow-xl transition-shadow">
+                        <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center mb-4 text-indigo-600">
+                            <i class="fas fa-award text-xl"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2">Confiabilidade</h4>
+                        <p class="text-sm text-gray-500 leading-relaxed">99,9% de uptime com infraestrutura redundante e segura.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <section id="solucoes" class="py-24 px-4 bg-white">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16 fade-in">
+            <span class="bg-orange-50 text-[#FF6B35] text-[12px] font-bold px-4 py-1.5 rounded-full tracking-widest uppercase mb-4 inline-block">
+                SOLUÇÕES
+            </span>
+            <h2 class="text-5xl font-extrabold text-gray-900 mb-6">
+                Conheça nossos <span class="text-[#FF6B35]">principais produtos</span>
+            </h2>
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg">
+                Soluções completas em telecomunicações para empresas que buscam eficiência, economia e tecnologia de ponta.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-[#1976D2]">
+                    <i class="fas fa-phone-alt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Telefone Fixo na Nuvem</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    PABX empresarial com E1 na Nuvem, SIP Trunk ilimitado. Redução de até 90% nos custos com telefonia.
+                </p>
+                <a href="#" class="text-[#1976D2] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Saiba mais <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-[#1976D2]">
+                    <i class="fas fa-wifi text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Internet Corporativa</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    Links de internet full de alta performance com SLA 99%, IP Fixo e garantia de 100% da velocidade contratada.
+                </p>
+                <a href="#" class="text-[#1976D2] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Saiba mais <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-[#1976D2]">
+                    <i class="far fa-comment-dots text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">API WhatsApp Business</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    Integração oficial com a API do WhatsApp Business. Centralize atendimentos e automatize respostas.
+                </p>
+                <a href="#" class="text-[#1976D2] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Saiba mais <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-[#1976D2]">
+                    <i class="fas fa-robot text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Chatbots sem Código</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    Construa chatbots inteligentes em 3 minutos. Interface intuitiva de arrastar e soltar.
+                </p>
+                <a href="#" class="text-[#1976D2] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Saiba mais <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-[#1976D2]">
+                    <i class="fas fa-link text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Redundância de Links</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    Conectividade ininterrupta com redundância de links para garantir o sucesso do seu negócio.
+                </p>
+                <a href="#" class="text-[#1976D2] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Saiba mais <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all group">
+                <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-8 text-[#1976D2]">
+                    <i class="fas fa-shield-alt text-xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Firewall Inteligente</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    Proteção avançada com criptografia 256-bit, monitoramento 24/7 e segurança em padrão militar.
+                </p>
+                <a href="#" class="text-[#1976D2] font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
+                    Saiba mais <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <section id="telefonia" class="py-24 px-4 bg-[#1a1c24] text-white">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-12 fade-in">
+            <span class="bg-[#2d201a] text-[#FF6B35] text-[12px] font-bold px-4 py-1.5 rounded-full border border-[#4d2b1a] uppercase tracking-widest mb-6 inline-block">
+                TELEFONIA EMPRESARIAL
+            </span>
+            <h2 class="text-5xl font-extrabold mb-8">
+                Telefone <span class="text-[#FF6B35]">Fixo:</span>
+            </h2>
+            
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <span class="bg-[#FF6B35] text-white px-6 py-2 rounded-lg font-bold text-sm shadow-lg">
+                    E1 na Nuvem | SipTrunk Ilimitado
+                </span>
+                <span class="bg-[#1976D2] text-white px-6 py-2 rounded-lg font-bold text-sm shadow-lg">
+                    PABX na Nuvem para a Empresa ou Home Office
+                </span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-[#2d303a] p-8 rounded-2xl border-l-4 border-[#FF6B35]">
+                <h4 class="text-[#FF6B35] font-bold mb-2">Redução de até 90%</h4>
+                <p class="text-gray-400 text-sm">nos chamados relacionados à telefonia</p>
+            </div>
+            <div class="bg-[#2d303a] p-8 rounded-2xl border-l-4 border-[#FF6B35]">
+                <h4 class="text-[#FF6B35] font-bold mb-2">Uptime de 99,7%</h4>
+                <p class="text-gray-400 text-sm">garantido por SLA</p>
+            </div>
+            <div class="bg-[#2d303a] p-8 rounded-2xl border-l-4 border-[#FF6B35]">
+                <h4 class="text-[#FF6B35] font-bold mb-2">Escalabilidade instantânea</h4>
+                <p class="text-gray-400 text-sm">conforme as necessidades da sua empresa</p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-16">
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-xl">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-[#1976D2]">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h4 class="font-bold mb-3">Chamadas</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Ligue para todo o Brasil +200 países com um só plano.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-xl">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-[#1976D2]">
+                    <i class="fas fa-th"></i>
+                </div>
+                <h4 class="font-bold mb-3">Autoatendimento</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Autoatendimento automático com direcionamento para usuários ou departamentos.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-xl">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-[#1976D2]">
+                    <i class="fas fa-users-cog"></i>
+                </div>
+                <h4 class="font-bold mb-3">Cenários de Atendimento</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Crie múltiplos autoatendimentos personalizados por número, departamentos ou usuários.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-xl">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-[#1976D2]">
+                    <i class="fas fa-microphone"></i>
+                </div>
+                <h4 class="font-bold mb-3">Gravação de Chamadas</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Monitore o atendimento da sua equipe com gravação de chamadas.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-xl">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-[#1976D2]">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h4 class="font-bold mb-3">Correio de Voz</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Cada ramal conta com correio de voz acessível de qualquer dispositivo.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-3xl text-gray-900 shadow-xl">
+                <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-[#1976D2]">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h4 class="font-bold mb-3">Extensão ou Ramal</h4>
+                <p class="text-xs text-gray-500 leading-relaxed">Encaminhe suas chamadas de forma automática para cada ramal/usuário.</p>
+            </div>
+        </div>
+
+        <div class="bg-[#124d85] rounded-[2.5rem] p-12 shadow-2xl">
+            <h3 class="text-2xl font-bold text-center mb-10">Nosso PABX em nuvem e serviço de operadora SIP Trunk oferecem:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-[#ffffff15] p-6 rounded-2xl border-l-2 border-[#FF6B35] backdrop-blur-sm">
+                    <h5 class="text-[#FF6B35] font-bold mb-2">Simplicidade</h5>
+                    <p class="text-[12px] text-gray-200">Dashboard intuitivo para fácil gerenciamento</p>
+                </div>
+                <div class="bg-[#ffffff15] p-6 rounded-2xl border-l-2 border-[#FF6B35] backdrop-blur-sm">
+                    <h5 class="text-[#FF6B35] font-bold mb-2">Flexibilidade</h5>
+                    <p class="text-[12px] text-gray-200">Escolha o número exato de ramais e canais</p>
+                </div>
+                <div class="bg-[#ffffff15] p-6 rounded-2xl border-l-2 border-[#FF6B35] backdrop-blur-sm">
+                    <h5 class="text-[#FF6B35] font-bold mb-2">Confiabilidade</h5>
+                    <p class="text-[12px] text-gray-200">SLA de 99,7% para máxima disponibilidade</p>
+                </div>
+                <div class="bg-[#ffffff15] p-6 rounded-2xl border-l-2 border-[#FF6B35] backdrop-blur-sm">
+                    <h5 class="text-[#FF6B35] font-bold mb-2">Economia</h5>
+                    <p class="text-[12px] text-gray-200">Elimine custos com hardware e manutenção</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Telefonia Section -->
+    <section id="telefonia" class="section-dark py-20 px-4 text-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+                        <img src="atendimentoprofissional.jpg" 
+                             alt="Atendimento Profissional" class="w-full h-64 object-cover rounded-xl mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Atendimento Profissional</h3>
+                        <p class="text-gray-300">Sua equipe sempre conectada</p>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <h2 class="text-4xl font-bold mb-6">
+                        Transforme <span class="text-[#FF6B35]">o atendimento</span> da sua empresa!
+                    </h2>
+                    <p class="text-gray-300 mb-8">
+                        Eleve o que sua empresa e clientes vão adorar!
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-[#FF6B35] flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span>Transfira chamadas para vários departamentos de vendas</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-[#FF6B35] flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span>Atenda via App ou Softphone no seu celular sem custo adicional</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-[#FF6B35] flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span>Configure ou atualize sua MATRIZ via sua empresa</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-[#FF6B35] flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span>Transfira uma chamada para uma Fila ou Time Externo sem custo</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-[#FF6B35] flex items-center justify-center flex-shrink-0 mt-1">
+                                <i class="fas fa-check text-white text-sm"></i>
+                            </div>
+                            <span>Gerencie voz gravada para o E-mail do colaborador</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="bg-gradient-to-r from-purple-900/50 to-purple-800/50 backdrop-blur-sm rounded-xl p-6 border border-purple-700/30">
+                        <div class="text-5xl font-bold text-[#FF6B35] mb-2">+100</div>
+                        <div class="text-lg">Recursos de Telefonia Empresarial</div>
+                        <p class="text-sm text-gray-300 mt-2">Tudo que você precisa já esta preparado em nossa plataforma de ponta</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="internet" class="py-24 px-4 bg-[#f8faff]">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16 fade-in">
+            <span class="bg-blue-100 text-[#1976D2] text-[12px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">
+                INTERNET CORPORATIVA
+            </span>
+            <h2 class="text-5xl font-extrabold text-[#124d85] mb-6">
+                Full Internet
+            </h2>
+            <p class="text-gray-500 max-w-3xl mx-auto text-base leading-relaxed">
+                Proporcione à sua empresa uma conexão de alta performance por meio da tecnologia de fibra óptica, garantindo links de internet com o desempenho e a confiabilidade necessárias para impulsionar o crescimento do seu negócio a uma velocidade incomparável!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12 fade-in">
+            <div class="text-center">
+                <div class="relative w-32 h-20 mx-auto mb-4">
+                    <div class="absolute inset-0 bg-blue-100 rounded-t-full"></div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-12 bg-gray-800 origin-bottom -rotate-45 rounded-full"></div>
+                </div>
+                <span class="text-2xl font-black text-gray-800">1GB</span>
+            </div>
+            <div class="text-center">
+                <div class="relative w-32 h-20 mx-auto mb-4">
+                    <div class="absolute inset-0 bg-blue-100 rounded-t-full"></div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-12 bg-gray-800 origin-bottom -rotate-12 rounded-full"></div>
+                </div>
+                <span class="text-2xl font-black text-gray-800">2GB</span>
+            </div>
+            <div class="text-center">
+                <div class="relative w-32 h-20 mx-auto mb-4">
+                    <div class="absolute inset-0 bg-blue-100 rounded-t-full"></div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-12 bg-gray-800 origin-bottom rotate-12 rounded-full"></div>
+                </div>
+                <span class="text-2xl font-black text-gray-800">3GB</span>
+            </div>
+            <div class="text-center">
+                <div class="relative w-32 h-20 mx-auto mb-4">
+                    <div class="absolute inset-0 bg-blue-100 rounded-t-full"></div>
+                    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-12 bg-gray-800 origin-bottom rotate-45 rounded-full"></div>
+                </div>
+                <span class="text-2xl font-black text-gray-800">4GB</span>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mb-20 fade-in">
+            <div class="bg-[#124d85] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg">
+                SLA Disponibilidade: 99,00% a.m.
+            </div>
+            <div class="bg-[#7c4dff] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg">
+                IP Fixo
+            </div>
+            <div class="bg-[#f06292] text-white px-8 py-3 rounded-xl font-bold text-sm shadow-lg">
+                Garantia de 100%
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto">
+        <div class="bg-[#1a202c] rounded-[3rem] p-10 lg:p-16 shadow-2xl overflow-hidden">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <h3 class="text-4xl font-bold text-white leading-tight">
+                        Link de Internet Corporativo <br>
+                        <span class="text-[#FF6B35]">(Link Full)</span>
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            <strong class="text-white">Oferecemos links de internet full</strong>, estáveis e de alta performance, com infraestrutura própria de fibra óptica, exclusivos para empresas que demandam conectividade ininterrupta e segura no Rio Grande do Sul.
+                        </p>
+                        <p class="text-gray-400 text-[11px] leading-relaxed">
+                            Atendimento direto e personalizado para cada cliente, com suporte especializado e monitoramento contínuo.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="bg-[#2d3748] p-4 rounded-xl flex items-center gap-4 border border-gray-700/30 transition hover:bg-[#333e52]">
+                        <div class="w-8 h-8 rounded-full bg-[#d53f8c] flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-check text-white text-[10px]"></i>
+                        </div>
+                        <span class="text-gray-200 text-xs font-medium">Atendimento personalizado por Consultor de Negócios</span>
+                    </div>
+                    
+                    <div class="bg-[#2d3748] p-4 rounded-xl flex items-center gap-4 border border-gray-700/30 transition hover:bg-[#333e52]">
+                        <div class="w-8 h-8 rounded-full bg-[#d53f8c] flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-check text-white text-[10px]"></i>
+                        </div>
+                        <span class="text-gray-200 text-xs font-medium">Monitoramento proativo: alertas em caso de indisponibilidade do serviço</span>
+                    </div>
+
+                    <div class="bg-[#2d3748] p-4 rounded-xl flex items-center gap-4 border border-gray-700/30 transition hover:bg-[#333e52]">
+                        <div class="w-8 h-8 rounded-full bg-[#d53f8c] flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-check text-white text-[10px]"></i>
+                        </div>
+                        <span class="text-gray-200 text-xs font-medium">Suporte técnico e escalonamento especializado em regime 24/7</span>
+                    </div>
+
+                    <div class="bg-[#2d3748] p-4 rounded-xl flex items-center gap-4 border border-gray-700/30 transition hover:bg-[#333e52]">
+                        <div class="w-8 h-8 rounded-full bg-[#d53f8c] flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-check text-white text-[10px]"></i>
+                        </div>
+                        <span class="text-gray-200 text-xs font-medium">Atendimento local em tempo reduzido</span>
+                    </div>
+
+                    <div class="bg-[#2d3748] p-4 rounded-xl flex items-center gap-4 border border-gray-700/30 transition hover:bg-[#333e52]">
+                        <div class="w-8 h-8 rounded-full bg-[#d53f8c] flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-check text-white text-[10px]"></i>
+                        </div>
+                        <span class="text-gray-200 text-xs font-medium">Relatórios on-line de disponibilidade e consumo</span>
+                    </div>
+
+                    <div class="bg-[#2d3748] p-4 rounded-xl flex items-center gap-4 border border-gray-700/30 transition hover:bg-[#333e52]">
+                        <div class="w-8 h-8 rounded-full bg-[#d53f8c] flex items-center justify-center flex-shrink-0 shadow-lg">
+                            <i class="fas fa-check text-white text-[10px]"></i>
+                        </div>
+                        <span class="text-gray-200 text-xs font-medium">Sem limite de consumo</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+ <div class="max-w-6xl mx-auto">
+        
+        <div class="bg-white rounded-[3rem] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-gray-50 p-12 lg:p-24 text-center fade-in">
+            
+            <div class="flex items-center justify-center gap-4 mb-10">
+                <h2 class="text-[#124d85] text-4xl font-extrabold tracking-tight">
+                    Redundância de Links
+                </h2>
+                <i class="fas fa-link text-[#c3b5fd] text-4xl transform rotate-[-45deg]"></i>
+            </div>
+
+            <p class="text-gray-500 text-xl leading-relaxed mb-10 max-w-3xl mx-auto">
+                Em um cenário empresarial cada vez mais dinâmico, a estabilidade da conexão à internet é <strong class="text-gray-900 font-bold">essencial para garantir o sucesso do negócio.</strong><br class="hidden md:block">
+                
+            </p>
+
+            <div class="max-w-4xl mx-auto space-y-3">
+                <p class="text-gray-400 text-base leading-relaxed">
+                    A interrupção do acesso à internet pode causar inconvenientes tanto para a empresa quanto para seus clientes.
+                </p>
+                <p class="text-gray-500 text-base leading-relaxed">
+                    <strong class="text-gray-800 font-bold italic">Para contornar essa situação, a prática da Redundância de Links de Internet surge como uma solução eficaz.</strong>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+  
+            <section id="whatsapp" class="py-24 px-4 bg-[#f8faff]">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 fade-in">
+            <div class="flex justify-center items-center gap-4 mb-4">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="h-8">
+                <span class="bg-[#dcfce7] text-[#00a884] text-[10px] font-bold px-3 py-1 rounded-full uppercase">
+                    WHATSAPP BUSINESS
+                </span>
+            </div>
+            <h2 class="text-[#124d85] text-5xl font-extrabold mb-6">
+                API Oficial <span class="text-gray-900 font-medium">do</span> <span class="text-[#00a884]">WhatsApp Business</span>
+            </h2>
+            <p class="text-gray-500 text-sm max-w-3xl mx-auto leading-relaxed">
+                Centralize atendimentos, distribua conversas entre equipes, automatize respostas e integre com CRMs e ERPs. Tudo isso com a eficiência e segurança que sua empresa precisa.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-20">
+            <div class="bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-50 hover:shadow-xl transition-shadow">
+                <div class="w-14 h-14 rounded-2xl bg-[#dcfce7] flex items-center justify-center mb-6">
+                    <i class="fab fa-whatsapp text-2xl text-[#00a884]"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-4">API Oficial do WhatsApp Business</h3>
+                <p class="text-gray-500 text-[13px] leading-relaxed">
+                    Integração oficial conectando sua empresa de forma segura e profissional à ferramenta de comunicação mais utilizada do Brasil.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-50 hover:shadow-xl transition-shadow">
+                <div class="w-14 h-14 rounded-2xl bg-[#dcfce7] flex items-center justify-center mb-6">
+                    <i class="fas fa-robot text-2xl text-[#00a884]"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-4">Chatbots sem código</h3>
+                <p class="text-gray-500 text-[13px] leading-relaxed">
+                    Construa e lance um chatbot inteligente do WhatsApp em 3 minutos. Sem codificação necessária - interface intuitiva de arrastar e soltar.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-50 hover:shadow-xl transition-shadow">
+                <div class="w-14 h-14 rounded-2xl bg-[#dcfce7] flex items-center justify-center mb-6">
+                    <i class="far fa-clock text-2xl text-[#00a884]"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-4">Muito Mais Responsivo</h3>
+                <p class="text-gray-500 text-[13px] leading-relaxed">
+                    Responda às mensagens do cliente e do WhatsApp 24 horas por dia, 7 dias por semana. Capture mais leads e conecte-se com mais contatos.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-[2.5rem] p-10 shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-50 hover:shadow-xl transition-shadow">
+                <div class="w-14 h-14 rounded-2xl bg-[#dcfce7] flex items-center justify-center mb-6">
+                    <i class="fas fa-bolt text-2xl text-[#00a884]"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-4">Automação e Integração</h3>
+                <p class="text-gray-500 text-[13px] leading-relaxed">
+                    Integração nativa com Google Sheets, HubSpot e Zapier. Conecte a outras ferramentas usando a API REST.
+                </p>
+            </div>
+        </div>
+
+        <div class="relative bg-[#0ca678] rounded-[3rem] p-12 lg:p-16 overflow-hidden shadow-2xl text-center">
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+            
+            <div class="relative z-10">
+                <h3 class="text-white text-4xl font-extrabold mb-4">Conecte-se de forma inteligente</h3>
+                <p class="text-white/80 text-sm mb-10 max-w-2xl mx-auto">
+                    Automatize processos, responda rapidamente e ofereça uma experiência excepcional aos seus clientes.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-5 py-3 rounded-xl border border-white/10 flex items-center gap-2">
+                        <i class="fas fa-check text-[12px]"></i> Centralizar atendimentos
+                    </span>
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-5 py-3 rounded-xl border border-white/10 flex items-center gap-2">
+                        <i class="fas fa-check text-[12px]"></i> Distribuir conversas entre equipes
+                    </span>
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-5 py-3 rounded-xl border border-white/10 flex items-center gap-2">
+                        <i class="fas fa-check text-[12px]"></i> Automatizar respostas
+                    </span>
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-5 py-3 rounded-xl border border-white/10 flex items-center gap-2">
+                        <i class="fas fa-check text-[12px]"></i> Integrar com CRMs e ERPs
+                    </span>
+                    <span class="bg-white/20 backdrop-blur-md text-white text-[11px] font-bold px-5 py-3 rounded-xl border border-white/10 flex items-center gap-2 mt-2">
+                        <i class="fas fa-check text-[12px]"></i> Elevar a eficiência do atendimento ao cliente
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="infraestrutura" class="py-24 px-4 bg-[#f8faff]">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="text-center mb-16 fade-in">
+            <span class="bg-[#d0e2f3] text-[#124d85] text-[12px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block">
+                INFRAESTRUTURA
+            </span>
+            <h2 class="text-[#124d85] text-5xl font-extrabold mb-6">
+                Infraestrutura First Class
+            </h2>
+            <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+                Com um dos <strong class="text-gray-900">menores custos</strong> por canal do mundo sem abrir mão de qualidade, sob <strong class="text-gray-900">três principais pilares!</strong>
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_15px_35px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-start text-left transition-all">
+                <div class="w-16 h-16 bg-[#eef4ff] rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fas fa-server text-[#124d85] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-6">Softswitch Class 5</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#124d85] mt-1"></i>
+                        <span>Núcleo de 1.000 ligações por licença</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#124d85] mt-1"></i>
+                        <span>PABX na Nuvem | Legacy Edition</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#124d85] mt-1"></i>
+                        <span>Agentes/ramais ilimitados inclusos</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#124d85] mt-1"></i>
+                        <span>+ de 10 Premiações Internacionais</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#124d85] mt-1"></i>
+                        <span>RFC Implementadas</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#124d85] mt-1"></i>
+                        <span>STIR/SHAKEN</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_15px_35px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-start text-left transition-all">
+                <div class="w-16 h-16 bg-[#fff4e5] rounded-2xl flex items-center justify-center mb-8">
+                    <i class="fas fa-database text-[#ea8918] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-6">Data Center Tier III</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#ea8918] mt-1"></i>
+                        <span>Seguro, redundante e escalável</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#ea8918] mt-1"></i>
+                        <span>Conectividade com mais de 5.000 km de Fibra Óptica</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#ea8918] mt-1"></i>
+                        <span>Conexão com Cable Landing Stations</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#ea8918] mt-1"></i>
+                        <span>São Paulo, Rio de Janeiro e Fortaleza</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#ea8918] mt-1"></i>
+                        <span>Conexão física e direta com Cloud Providers</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#ea8918] mt-1"></i>
+                        <span>Google Cloud, Azure, IBM, Oracle, AWS</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_25px_45px_rgba(0,0,0,0.06)] border border-gray-100 flex flex-col items-start text-left transition-all">
+                <div class="w-16 h-16 bg-[#e6fcf5] rounded-2xl flex items-center justify-center mb-6">
+                    <i class="fas fa-shield-alt text-[#0ca678] text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-extrabold text-gray-900 mb-2">Hardware Homologado</h3>
+                <span class="bg-[#124d85] text-white text-[9px] font-bold px-3 py-1 rounded-full mb-6">
+                    ANATEL
+                </span>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#0ca678] mt-1"></i>
+                        <span>Session Border Controller (SBC)</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#0ca678] mt-1"></i>
+                        <span>Hardware homologado pela Anatel</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#0ca678] mt-1"></i>
+                        <span>Até 300.000 registros SIP</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#0ca678] mt-1"></i>
+                        <span>20.000 ligações simultâneas</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#0ca678] mt-1"></i>
+                        <span>Cluster Redundante</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-[13px] text-gray-600">
+                        <i class="fas fa-check text-[#0ca678] mt-1"></i>
+                        <span>SBC Premiado Mundialmente + ISO 9001</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<section class="py-20 px-4 bg-gray-50 flex justify-center items-center">
+    <div class="bg-[#1e222d] w-full max-w-6xl rounded-[2.5rem] p-10 md:p-14 flex flex-col lg:flex-row gap-12 lg:gap-20 shadow-2xl">
+        
+        <div class="flex-1">
+            <h2 class="text-3xl md:text-4xl font-bold text-white leading-tight mb-6">
+                <span class="text-[#fb6520]">Firewall</span> Inteligente totalmente<br> Integrado
+            </h2>
+            
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-4">
+                Firewall inteligente integrado para ataques de segurança e roubo de serviço SIP, pacotes malformados, ataques de negação de serviço (DoS). Serviço de segurança SIP aprimorado para proteger a privacidade de sua empresa.
+            </p>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed mb-10">
+                Função Geo, bloqueio de país e sistema de reconhecimento de User Agent para bloqueio em caso de IP risco de invasão.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-[#282d3b] p-5 rounded-xl border-l-[3px] border-orange-500 shadow-md">
+                    <p class="text-gray-300 text-sm leading-snug">Firewall inteligente e automático integrado</p>
+                </div>
+                <div class="bg-[#282d3b] p-5 rounded-xl border-l-[3px] border-blue-500 shadow-md">
+                    <p class="text-gray-300 text-sm leading-snug">White List & Black List para IP, Países e User Agent</p>
+                </div>
+                <div class="bg-[#282d3b] p-5 rounded-xl border-l-[3px] border-green-500 shadow-md">
+                    <p class="text-gray-300 text-sm leading-snug">Análise de pacotes com base em códigos de falha</p>
+                </div>
+                <div class="bg-[#282d3b] p-5 rounded-xl border-l-[3px] border-purple-500 shadow-md">
+                    <p class="text-gray-300 text-sm leading-snug">Bloqueio baseado em monitoramento em tempo real</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:w-1/3 flex flex-col items-center justify-center text-center mt-8 lg:mt-0">
+            <div class="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff6b35] to-[#e63900] flex items-center justify-center mb-6 shadow-[0_10px_30px_rgba(255,107,53,0.3)]">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-14 h-14 text-white">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+            </div>
+            
+            <h3 class="text-4xl md:text-5xl font-bold text-[#448cfd] mb-3">256-bit</h3>
+            <p class="text-gray-300 text-base mb-2">Criptografia em padrão Militar</p>
+            <p class="text-gray-500 text-xs">Seguro de +6,8 Milhões de Reais</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="py-20 px-4 bg-[#f4f8ff] flex justify-center items-center">
+    <div class="w-full max-w-7xl mx-auto">
+        
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-extrabold text-[#1a1a1a] leading-tight">
+                Empresas que utilizam e<br>
+                <span class="text-[#3b82f6]">recomendam Starline</span>
+            </h2>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 shadow-sm flex justify-center items-center">
+            <img src="logos.png" alt="Logotipos das empresas parceiras Starline" class="max-w-full h-auto mx-auto object-contain">
+        </div>
+    </div>
+</section>
+
+
+<section class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-[#2563eb] py-10 md:py-14 shadow-2xl overflow-hidden">
+    <div class="w-full max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-10 gap-x-4 text-center text-white">
+            
+            <div class="flex flex-col items-center">
+                <span class="text-3xl md:text-5xl font-extrabold mb-2 tracking-tighter">300.000+</span>
+                <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">Registros SIP</span>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <span class="text-3xl md:text-5xl font-extrabold mb-2 tracking-tighter">20.000</span>
+                <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">Ligações Simultâneas</span>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <span class="text-3xl md:text-5xl font-extrabold mb-2 tracking-tighter">99,9%</span>
+                <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">Up-Time Garantido</span>
+            </div>
+
+            <div class="flex flex-col items-center">
+                <span class="text-3xl md:text-5xl font-extrabold mb-2 tracking-tighter">24/7</span>
+                <span class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.2em] text-blue-100">Monitoramento</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+   <footer  class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen bg-black py-10 md:py-14 shadow-2xl overflow-hidden"  >
+    <div class="max-w-7xl mx-auto px-4">
+        
+
+  <section class="w-full bg-black py-16 px-4">
+    <div class="max-w-4xl mx-auto">
+        
+        <div class="relative w-full h-[350px] md:h-[450px] rounded-[3rem] overflow-hidden shadow-2xl border border-gray-800/30">
+            
+            <img src="footerfoto.jpg" alt="Equipe Starline" class="absolute inset-0 w-full h-full object-cover">
+            
+            <div class="absolute inset-0 bg-gradient-to-r from-[#250d5e]/90 via-[#250d5e]/70 via-30% to-transparent"></div>
+
+            <div class="relative h-full flex flex-col items-center justify-center text-center px-6 py-12 z-10">
+                <h2 class="text-white text-2xl md:text-4xl font-extrabold mb-3 tracking-tight leading-tight">
+                    Junte-se a centenas de empresas
+                </h2>
+                <p class="text-gray-100 text-xs md:text-sm font-medium opacity-90 tracking-[0.2em] uppercase">
+                    que já transformaram sua comunicação
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <div class="text-center mb-24">
+           
+
+                
+
+
+
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 leading-tight">
+                <p style="color: #ffffff;">Sua empresa pronta</p>
+                <span class="text-orange-500">para o amanhã</span>
+            </h2>
+
+            <div class="flex flex-col gap-4 items-center">
+                <a href="#" class="bg-orange-600 hover:bg-orange-700 text-white font-bold py-4 px-10 rounded-xl transition-all shadow-lg shadow-orange-900/20">
+                    Pronto para Inovar na sua Empresa?
+                </a>
+                <a href="#" class="bg-[#1e4ed8] hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-xl transition-all">
+                    Melhorar minha Comunicação
+                </a>
+            </div>
+        </div>
+
+        <div class="mb-24">
+            <div class="text-center mb-12">
+                <span class="bg-gray-800 text-blue-400 text-[14px] px-4 py-2 rounded-full uppercase font-bold tracking-widest">
+                    📍 Nossa Localização
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mt-4">
+                    <span class="text-blue-500"> <span class="text-white">Onde nos</span> Encontrar</span>
+                </h2>
+                <p class="text-gray-400 mt-2">Estamos em Teutônia/RS. Venha nos visitar!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                <div class="bg-[#0f1218] p-8 rounded-3xl border border-gray-800">
+                    <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h4 class="text-xl font-bold mb-4 text-white">Endereço</h4>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Rua Santos Dumont, 1022<br>
+                        Sala 202 — Bairro Languiru<br>
+                        <strong>Teutônia / RS</strong>
+                    </p>
+                    <a href="#" class="mt-8 flex items-center justify-center gap-2 bg-blue-500/20 hover:bg-blue-500/40 text-blue-400 font-bold py-3 rounded-xl border border-blue-500/30 transition-all">
+                        <span>✈</span> Starline Telefonia
+                    </a>
+                </div>
+                <div class="lg:col-span-2 bg-gray-900 rounded-3xl border border-gray-800 overflow-hidden min-h-[400px]">
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.4967864788623!2d-51.8109125!3d-29.4727012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951c6f607804b2cb%3A0x5ce115f15d695b6b!2sStarline%20Telefonia!5e0!3m2!1spt-BR!2sbr!4v1773165823074!5m2!1spt-BR!2sbr" 
+                   width="820" 
+                   height="450" 
+                   style="border:0;" 
+                   allowfullscreen="" 
+                   loading="lazy" 
+                   referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pt-16 border-t border-gray-800">
+            <div>
+                <p class="text-gray-400 text-sm mb-12">Telefonia Descomplicada para Empresas Exigentes. Conectando seu negócio ao Futuro.</p>
+                <div class="text-2xl font-black">
+                   <span class="text-gray-600">Think</span> <span class="text-blue-500">Outside</span> <span class="text-gray-600">The</span> <span class="text-orange-500">Box.</span>
+                </div>
+                <p class="text-gray-500 text-[10px] mt-2 italic">Inovar é questionar o óbvio e criar o extraordinário.</p>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6">Navegação</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white">Início</a></li>
+                    <li><a href="#" class="hover:text-white">Quem Somos</a></li>
+                    <li><a href="#" class="hover:text-white">Soluções</a></li>
+                    <li><a href="#" class="hover:text-white">Recursos</a></li>
+                    <li><a href="#" class="hover:text-white">Infraestrutura</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6">Soluções</h4>
+                <ul class="space-y-4 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-white">Telefone Fixo na Nuvem</a></li>
+                    <li><a href="#" class="hover:text-white">Internet Corporativa</a></li>
+                    <li><a href="#" class="hover:text-white">API WhatsApp Business</a></li>
+                    <li><a href="#" class="hover:text-white">Chatbots sem Código</a></li>
+                    <li><a href="#" class="hover:text-white">Redundância de Links</a></li>
+                    <li><a href="#" class="hover:text-white">Firewall Inteligente</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-bold text-lg mb-6">Contato</h4>
+                <ul class="space-y-4 text-gray-400 text-sm mb-8">
+                    <li class="flex items-center gap-3">📞 (51) 2319-0300</li>
+                    <li class="flex items-center gap-3">📞 0800 456 0300</li>
+                    <li class="flex items-center gap-3">📧 contato@starline.tec.br</li>
+                </ul>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 bg-purple-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all">📸</a>
+                    <a href="#" class="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-blue-600 transition-all">F</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center pt-16 mt-16 border-t border-gray-900 text-[12px] text-gray-600">
+            © 2025 Starline Telefonia. Todos os direitos reservados.
+        </div>
+    </div>
+</footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/555123190300?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp text-white text-3xl"></i>
+    </a>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        // Fade in on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
